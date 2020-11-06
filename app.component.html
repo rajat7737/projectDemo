@@ -1,0 +1,117 @@
+<div class="modal-hearde d -flex">
+    <button type = "button" class = "btn btn-modal-close" aria-label="close" (click)="activeModal.close()">
+    </button>
+    <h5 class="modal-title">{{'Product'| translate}} {{'Master'| translate}}</h5>
+    <button (click)="openEditPopUp(null)" id="bt"
+    placement="bottom" container="body" ngbTooltip="{{'Add'|translate}}" triggers="hover:blur"
+      class="btn btn-outline-action btn-icon btn-icon-sm mb-1 ml-auto mr-4"><i class="child-icon  ik-l-55 micon-add" ></i></button>
+</div>
+    <div class ="modal-body" style="height : calc(100vh-50px);">
+
+        <form [formGroup] = "searchForm" (ngSubmit)="search()">
+
+            <div class ="row">
+                <div class ="form-group col-3 mr-auto">
+                    <label class="text-medium">{{'Product Name'}}</label>
+                    <input type="text" class ="form-control" formControlName ="pname">
+                </div>
+                        <div class ="form-group col-3 mr-auto">
+                            <label class="text-medium">{{'Category Name'}}</label>
+                            <input type="text" class ="form-control" formControlName ="gname">
+                        </div>
+                                <div class ="form-group col-3 mr-auto">
+                                    <label class="text-medium">{{'Vendor Name'}}</label>
+                                    <input type="text" class ="form-control" formControlName ="vname">
+                                </div>
+
+                                        <div class ="form-group col-auto">
+                                            <button type="submit" class ="btn btn-action">{{'search'}}</button>
+                                        </div>
+                                    </div>
+        </form>
+
+        <div class ="card-body p-0">
+            <ngx-datatable style ="height : calc(100h -165px);" class ="bootstarp" [rows]="masterList"
+            [headerHeight]="40" [selectionType]="'single'" [columnMode] ="'force'" [footerHeight]="50" [rowHeight] = "40"
+            [scrollbarV] = "true" [limit] = "20">
+        
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{}}" prop="" >
+                <ng-template ngx-datatable-cell-template let-rowIndex = "rowIndex" let-value = "value" let-row="row">
+                    <!-- {{row.}} -->
+                </ng-template>
+
+            </ngx-datatable-column>
+
+            <ngx-datatable-column name = "{{Action}}" [sortable] ="false" >
+               
+<ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+    <button type="button" class="btn shadow-none btn-icon-xs btn-icon" placement="top"
+        ngbTooltip="{{'Edit'|translate}}" triggers="hover:blur" container="body"
+        (click)="openEditPopUp(row)">
+        <i class="ik-l-55 micon-edit"> </i>
+    </button>
+</ng-template>
+
+            </ngx-datatable-column>
+
+
+
+        </ngx-datatable>
+                                            
+                                            
